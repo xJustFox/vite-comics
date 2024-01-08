@@ -85,8 +85,8 @@ export default {
 
         &.active,
         &:hover{
+            color: $my_blue;
             cursor: pointer;
-            color: #0282f9;
         }
     }
 
