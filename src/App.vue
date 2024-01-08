@@ -1,13 +1,13 @@
 <script>
   import AppHeader from './components/AppHeader.vue';
   import AppMain from './components/AppMain.vue';
-  import AppBlueBar from './components/AppBlueBar.vue';
+  import AppFooter from './components/AppFooter.vue';
 
   export default{
     components: {
       AppHeader,
       AppMain,
-      AppBlueBar
+      AppFooter
     }
   }
 </script>
@@ -16,7 +16,7 @@
 
   <AppHeader />
   <AppMain />
-  <AppBlueBar />
+  <AppFooter />
 
 </template>
 

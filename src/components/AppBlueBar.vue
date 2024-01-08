@@ -30,7 +30,7 @@
     }
 </script>
 
-<template lang="">
+<template>
     <section class="shippingBanner">
         <div class="container">
             <ul class="list-unstyled m-0  d-flex justify-content-around  p-5 flex-wrap">
@@ -43,7 +43,7 @@
     </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @use '../styles/partials/_variables.scss' as *; 
     .shippingBanner{
         background-color: $my_blue;
