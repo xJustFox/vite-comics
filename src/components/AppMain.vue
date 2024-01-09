@@ -1,10 +1,12 @@
 <script>
 import AppJumbo from './AppJumbo.vue';
+import AppCardComic from './AppCardComic.vue';
 
 export default {
     name: 'AppMain',
     components: {
         AppJumbo,
+        AppCardComic,
     },
     data() {
         return {
@@ -90,9 +92,16 @@ export default {
 <template>
     <main>
         <AppJumbo />
-        <div class="container py-5 position-relative">
+        <div class="container my-p position-relative">
             <div class="plate">CURRENT SERIES</div>
-            <h3>&ndash;&ndash;&gt;Content goes here!&lt;&ndash;&ndash;</h3>
+
+            <div class="my-row">
+                <AppCardComic v-for="item in comics" :comic="item"/>
+            </div>
+
+            <div class="text-center pt-4">
+                <button class="my-btn">LOAD MORE</button>
+            </div>
         </div>
     </main>
 </template>
@@ -103,9 +112,14 @@ export default {
     main{
         background-color: #1c1c1c;
 
+
+        .my-p{
+            padding: 50px 0px 15px 0px;
+        }
         .plate{
             position: absolute;
-            bottom: 85%;
+            bottom: 97%;
+            cursor: default;
             background-color: $my-blue;
             color: #fff;
             font-size: large;
@@ -113,8 +127,28 @@ export default {
             padding: 8px 25px;
         }
 
-        h3{
-            color: #fff;
+        .my-row{
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px 5px;
+
+            
         }
+
+        .my-btn{
+            background-color: $my-blue;
+            border: 0;
+            padding: 5px 40px;
+            color: #fff;
+            font-weight: 600;
+            font-size: small;
+
+            &:hover{
+                transform:scale(1.1);
+            }
+        }
+
     }
 </style>
