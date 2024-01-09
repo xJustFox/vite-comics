@@ -12,7 +12,7 @@ export default {
 <template>
     <main>
         <div class="container d-flex py-5">
-            <h1>&ndash;&ndash;&gt;Content goes here!&lt;&ndash;&ndash;</h1>
+            <h3>&ndash;&ndash;&gt;Content goes here!&lt;&ndash;&ndash;</h3>
         </div>
     </main>
 </template>
@@ -23,7 +23,7 @@ export default {
     main{
         background-color: #1c1c1c;
 
-        h1{
+        h3{
             color: #fff;
         }
     }

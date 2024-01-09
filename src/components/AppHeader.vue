@@ -55,16 +55,24 @@ export default {
 </script>
 
 <template>
-    <header class="py-4">
+    <header class="py-3">
         <div class="container">
+
+            <!-- Nav Bar -->
             <nav class="row align-items-center">
+
+                <!-- Logo -->
                 <div class="col">
-                    <img src="../assets/imgs/dc-logo.png" alt="">
+                    <a href="#">
+                        <img src="../assets/imgs/dc-logo.png" alt="Logo">
+                    </a>
                 </div>
+
+                <!-- Menù -->
                 <div class="col">
                     <ul class="d-flex list-unstyled m-0 ">
                         <li class="px-2 " v-for="(link, index) in links" :key="index">
-                            <a :href="link.href">{{ link.name }}</a>
+                            <a :href="link.href" :class="index ==  1 ? 'active' : ''">{{ link.name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -81,13 +89,26 @@ export default {
     }
 
     li a{
+        color: #000;
         font-weight: 600;
+        position: relative;
 
         &.active,
         &:hover{
             color: $my_blue;
             cursor: pointer;
+
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -47px;
+                left: 0px;
+                width: 100%;
+                height: 5px;
+                background-color: $my_blue;
+            }
         }
+
     }
 
 </style>

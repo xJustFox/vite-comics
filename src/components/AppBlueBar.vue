@@ -51,6 +51,10 @@
         li{
             &:hover{
                 cursor: pointer;
+
+                img{
+                    transform: scale(1.1);
+                }
             }
 
             img{

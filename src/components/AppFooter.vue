@@ -30,22 +30,27 @@ export default {
                 {
                     alt: "Faceboock",
                     img: "/src/assets/imgs/footer-facebook.png",
+                    href: "#",
                 },
                 {
                     alt: "Twitter",
                     img: "/src/assets/imgs/footer-twitter.png",
+                    href: "#",
                 },
                 {
                     alt: "YouTube",
                     img: "/src/assets/imgs/footer-youtube.png",
+                    href: "#",
                 },
                 {
                     alt: "Pinterest",
                     img: "/src/assets/imgs/footer-pinterest.png",
+                    href: "#",
                 },
                 {
                     alt: "Periscope",
                     img: "/src/assets/imgs/footer-periscope.png",
+                    href: "#",
                 },
             ]
         }
@@ -53,7 +58,7 @@ export default {
 }
 </script>
 
-<template lang="">
+<template>
     <footer>
         <!-- Blue Bar -->
         <AppBlueBar />
@@ -66,10 +71,10 @@ export default {
                     <div>
                         <div class="row flex-column content">
                             <div class="col-4" v-for="(item, index) in arrList" :key="index">
-                                <a class="title" href="#">{{item.title}}</a>
+                                <span class="title">{{item.title}}</span>
     
                                 <div v-for="(link, index) in item.links" :key="index">
-                                    <a class="my-gray" href="#">{{link}}</a>
+                                    <a class="infoItems" href="#">{{link}}</a>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +97,10 @@ export default {
                     <div class="col d-flex justify-content-end ">
                         <ul class="list-unstyled m-0 d-flex align-items-center">
                             <li>FOLLOW US</li>
-                            <li v-for="(social, index) in arrSocial" :key="index">
-                                <img :src="social.img" :alt="social.alt">
+                            <li class="socialIcon" v-for="(social, index) in arrSocial" :key="index">
+                                <a :href="social.href">
+                                    <img :src="social.img" :alt="social.alt">
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -115,13 +122,19 @@ export default {
             padding: 50px 0;
         }
         .title{
+            cursor: default;
             color: #fff;
             font-size: 30px;
             font-weight: bolder;
         }
 
-        .my-gray{
+        .infoItems{
             color: #878484fa;
+
+            &:hover{
+                color: $my_blue;
+                cursor: pointer;
+            }
         }
 
         .log-bg{
@@ -135,15 +148,27 @@ export default {
             .my-btn{
                 border: 2px solid $my_blue;
                 border-radius: 0;
+
+                &:hover{
+                    transform:scale(1.1);
+                }
             }
 
-            ul li:first-child{
-                font-weight: bolder;
-                color: $my_blue;
-            }
+            ul{
+                li:first-child{
+                    cursor: default;
+                    font-weight: bolder;
+                    color: $my_blue;
+                }
 
-            ul li{
-                padding: 0 10px;
+                li{
+                   padding: 0 10px;
+               }
+
+               .socialIcon:hover{
+                transform: scale(1.1);
+               }
+
             }
         }
     }
